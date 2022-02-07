@@ -24,3 +24,8 @@ const arrayValue3String_ = maybeArrayValue3.isSome
 
 const find4InArray = testArray.find((num) => num === 4);
 //const find4InArrayString = find4InArray.toString();
+
+type NonEmptyArray<T> = [T, ...T[]];
+
+const nonEmptyArrayTest: NonEmptyArray<number> = [1, 2, 3];
+// const emptyNonEmptyArray : NonEmptyArray<number> = []
