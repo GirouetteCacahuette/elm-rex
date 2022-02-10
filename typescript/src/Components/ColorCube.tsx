@@ -1,5 +1,6 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { clogNeverValue } from "../Helpers/helpers";
+
 
 export type Color = "blue" | "red" | "orange";
 
@@ -23,6 +24,17 @@ export const ColorCube = ({ color }: Props) => {
   }, [color]);
 
   let myNumber: number = 123;
+
+  //ICI
+  // let myAny: any = 123;
+
+  // const myArray = myAny.map((something : any) => {
+  //   return something + 1;
+  // });
+
+  // const getResult = (myNullOrString : string | null) => {
+  //     const result = myNullOrString.split('s')
+  // }
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
