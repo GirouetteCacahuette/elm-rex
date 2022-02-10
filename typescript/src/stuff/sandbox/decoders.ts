@@ -34,35 +34,6 @@ const memberStatusDecoder: JsonDecoder.Decoder<MemberStatus> =
     }
   });
 
-const dataFromApi = {
-  users: [
-    {
-      info: {
-        name: "Martin",
-        surname: "Prieur",
-        age: 58,
-      },
-      tickets: [
-        { id: 456189, price: 1972 },
-        { id: 324891, price: 4577 },
-      ],
-      memberStatus: "gold",
-    },
-    {
-      info: {
-        name: "Nitram",
-        surname: "Rueirp",
-        age: 85,
-      },
-      tickets: [
-        { id: 981654, price: 2791 },
-        { id: 198423, price: 7754 },
-      ],
-      memberStatus: "plat",
-    },
-  ],
-};
-
 const userInfoDecoder: JsonDecoder.Decoder<UserInfo> = JsonDecoder.object(
   {
     info: JsonDecoder.object(
@@ -91,6 +62,35 @@ const usersInfoDecoder: JsonDecoder.Decoder<UserInfo[]> = JsonDecoder.array(
   userInfoDecoder,
   "usersInfoDecoder"
 );
+
+const dataFromApi = {
+  users: [
+    {
+      info: {
+        name: "Martin",
+        surname: "Prieur",
+        age: 58,
+      },
+      tickets: [
+        { id: 456189, price: 1972 },
+        { id: 324891, price: 4577 },
+      ],
+      memberStatus: "gold",
+    },
+    {
+      info: {
+        name: "Nitram",
+        surname: "Rueirp",
+        age: 85,
+      },
+      tickets: [
+        { id: 981654, price: 2791 },
+        { id: 198423, price: 7754 },
+      ],
+      memberStatus: "plat",
+    },
+  ],
+};
 
 const usersInfoDecodeResult: Result<UserInfo[]> =
   usersInfoDecoder.decode(dataFromApi);

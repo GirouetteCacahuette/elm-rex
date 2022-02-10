@@ -1,22 +1,12 @@
-import { Maybe, Nothing, Some } from "./Maybe";
-
-type Dog = {
+export type Dog = {
   name: string;
   age: number;
-};
-
-type NonEmptyArray<T> = T[] & { 0: T };
-
-const myArray: NonEmptyArray<number> = [3];
-
-const myArrayLength = (array: number[]): number => {
-  return array[6];
 };
 
 type Person = {
   name: string;
   surname: string;
-  dog?: Dog;
+  dog: Dog;
 };
 
 const myFriend = {
@@ -33,12 +23,6 @@ const me = {
   surname: "Prieur",
 };
 
-export const getPersonsDogAge = (person: Person): Maybe<string> => {
-  const dogAge = person.dog?.age;
-
-  return !!dogAge ? Some(dogAge.toString()) : Nothing;
-};
-
-const myDogsAge = getPersonsDogAge(me);
-
-const myFriendsDogAge = getPersonsDogAge(myFriend);
+// export const getPersonsDogAge = (person: Person): number => {
+//
+// };

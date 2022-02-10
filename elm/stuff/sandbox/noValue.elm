@@ -41,11 +41,11 @@ getPersonsDogAge person =
         dogAge
 
 
-myDogAge : Maybe String
+myDogAge : Maybe Int
 myDogAge =
     getPersonsDogAge me
 
 
-myFriendDogAge : Maybe String
+myFriendDogAge : Maybe Int
 myFriendDogAge =
     getPersonsDogAge myFriend
